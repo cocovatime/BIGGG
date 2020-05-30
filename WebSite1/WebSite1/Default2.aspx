@@ -21,7 +21,7 @@
 								<header id="header">
 									<a href="Default2.aspx" class="logo"><strong>Converse</strong></a>
 									<ul class="icons">
-                                        <li><p>welcome<%--訪問者姓名,若無顯示訪客--%>to this page</p></li>
+                                        <li><p>welcome<%--訪問者姓名,若無顯示訪客--%> to this page</p></li>
                                         <li><button type="button">log out</button></li>
 										<li><a href="https://zh-tw.facebook.com/converse" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<%--<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>--%>

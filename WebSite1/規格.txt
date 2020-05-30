@@ -1,7 +1,5 @@
 Default2.aspx			首頁
 Default.aspx			公司簡介
-product.aspx			公司產品
-Default3.aspx			會員服務
 Default4.aspx			客服中心
 Chuck Taylor All Star Pro.aspx	低筒鞋
 All Star Pro BB.aspx		中筒鞋
