@@ -95,7 +95,14 @@
 									<ul>
 										<li><a href="Default2.aspx">首頁</a></li>
 										<li><a href="Default.aspx">公司簡介</a></li>
-										<li><a href="product.aspx">公司產品</a></li>
+										<li>
+											<span class="opener">商品介紹</span>
+											<ul>
+												<li><a href="Chuck Taylor All Star Pro.aspx">低筒鞋</a></li>
+												<li><a href="All Star Pro BB.aspx">中筒鞋</a></li>
+                                                <li><a href="Chuck Taylor All Star.aspx">高筒鞋</a></li>
+											</ul>
+										</li>
 										<li>
 											<span class="opener">會員服務</span>
 											<ul>
