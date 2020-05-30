@@ -6,7 +6,8 @@ Default4.aspx			客服中心
 Chuck Taylor All Star Pro.aspx	低筒鞋
 All Star Pro BB.aspx		中筒鞋
 Chuck Taylor All Star.aspx	高筒鞋
-
+sign up.aspx			註冊
+log in.aspx			登入				
 
 
 另外下面的HTML都是模板
