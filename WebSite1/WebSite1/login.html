@@ -1,11 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head >
 <title>Converse</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            ul.contact li:first-child:before{
+                top:8px;
+            }
+            ul.contact li:nth-child(2)::before{
+                top: 30px;
+            }
+        </style>
 </head>
 <body>
     <!-- Wrapper -->
@@ -30,13 +38,13 @@
 							<!-- Section -->
 							<section>
 								<header class="major">
-									<h2>客服中心</h2>
+									<h2>會員登入</h2>
 								</header>
-								<p>若有任何商品問題，請與客服人員聯繫，客服人員會盡快與你聯繫及處理。</p>
 								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="#">lhu@gm.lhu.edu.tw</a></li>
-									<li class="icon solid fa-phone">(02)  82093211 </li>
-									<li class="icon solid fa-home">桃園市龜山區萬壽路一段300號(No.300,Sec.1,Wanshou Rd.,Guishan District,Taoyuan City, 333326,Taiwan (R.O.C.))</li>
+                                    <li class="icon solid fa-user js-account"><input type="text" placeholder="請輸入帳號"></li>
+                                    <li class="icon solid fa-key js-password"><input type="password" placeholder="請輸入密碼"></li>
+                                    <li><button type="button" class="js-login">登入</button></li>
+									<!-- <li class="icon solid fa-home">桃園市龜山區萬壽路一段300號(No.300,Sec.1,Wanshou Rd.,Guishan District,Taoyuan City, 333326,Taiwan (R.O.C.))</li> -->
 								</ul>
 							</section>
 
@@ -93,7 +101,30 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script>
+                $(function(){
+
+                    $('.js-login').on('click',function(){
+                        if(sessionStorage.getItem("account") == null || sessionStorage.getItem("password") == null  ){
+                            alert('帳號密碼輸入錯誤')
+                            window.location.href='Default2.html'; 
+                        }
+                    })
+
+                    //帳號
+                    $('.js-account').on('input',function(){
+
+                    })
+
+
+                    //密碼
+                    $('.js-password').on('input',function(){
+                    })
+
+
+                })
+            </script>
 
 </body>
 </html>

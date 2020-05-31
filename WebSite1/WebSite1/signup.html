@@ -1,11 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head >
 <title>Converse</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            ul.contact li:first-child:before{
+                top:8px;
+            }
+            ul.contact li:nth-child(2)::before{
+                top: 30px;
+            }
+        </style>
 </head>
 <body>
     <!-- Wrapper -->
@@ -30,13 +38,15 @@
 							<!-- Section -->
 							<section>
 								<header class="major">
-									<h2>客服中心</h2>
+									<h2>會員註冊</h2>
 								</header>
-								<p>若有任何商品問題，請與客服人員聯繫，客服人員會盡快與你聯繫及處理。</p>
 								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="#">lhu@gm.lhu.edu.tw</a></li>
-									<li class="icon solid fa-phone">(02)  82093211 </li>
-									<li class="icon solid fa-home">桃園市龜山區萬壽路一段300號(No.300,Sec.1,Wanshou Rd.,Guishan District,Taoyuan City, 333326,Taiwan (R.O.C.))</li>
+                                    <li class="icon solid fa-user "><input type="text" class="js-account" placeholder="請輸入帳號"></li>
+                                    <li class="icon solid fa-key "><input type="password" class="js-password" placeholder="請輸入密碼"></li>
+                                    <li class="icon solid fa-user-tie "><input type="text" class="js-user" placeholder="請輸入姓名"></li>
+                                    <li class="icon solid fa-envelope "><input type="email" class="js-email" placeholder="請輸入EMAIL"></li>
+                                    <li><button type="button" class="js-signup">註冊</button></li>
+									<!-- <li class="icon solid fa-home">桃園市龜山區萬壽路一段300號(No.300,Sec.1,Wanshou Rd.,Guishan District,Taoyuan City, 333326,Taiwan (R.O.C.))</li> -->
 								</ul>
 							</section>
 
@@ -93,7 +103,35 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script>
+                $(function(){
+
+                    $('.js-signup').on('click',function(){
+                        var account = $('.js-account').val();
+                        var password = $('.js-password').val();
+                        var name = $('.js-user').val();
+                        var email = $('.js-email').val();
+                        console.log(account,password,name,email);
+                        sessionStorage.setItem("account", account);
+                        sessionStorage.setItem("password", password);
+                        sessionStorage.setItem("name", name);
+                        sessionStorage.setItem("email", email);
+                    })
+
+                    //帳號
+                    $('.js-account').on('input',function(){
+
+                    })
+
+
+                    //密碼
+                    $('.js-password').on('input',function(){
+                    })
+
+
+                })
+            </script>
 
 </body>
 </html>
