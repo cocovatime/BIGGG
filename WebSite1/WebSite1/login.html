@@ -41,8 +41,8 @@
 									<h2>會員登入</h2>
 								</header>
 								<ul class="contact">
-                                    <li class="icon solid fa-user js-account"><input type="text" placeholder="請輸入帳號"></li>
-                                    <li class="icon solid fa-key js-password"><input type="password" placeholder="請輸入密碼"></li>
+                                    <li class="icon solid fa-user "><input type="text" class="js-account" placeholder="請輸入帳號"></li>
+                                    <li class="icon solid fa-key "><input type="password" class="js-password" placeholder="請輸入密碼"></li>
                                     <li><button type="button" class="js-login">登入</button></li>
 									<!-- <li class="icon solid fa-home">桃園市龜山區萬壽路一段300號(No.300,Sec.1,Wanshou Rd.,Guishan District,Taoyuan City, 333326,Taiwan (R.O.C.))</li> -->
 								</ul>
@@ -106,10 +106,40 @@
                 $(function(){
 
                     $('.js-login').on('click',function(){
-                        if(sessionStorage.getItem("account") == null || sessionStorage.getItem("password") == null  ){
-                            alert('帳號密碼輸入錯誤')
-                            window.location.href='Default2.html'; 
+                        var sessionInformation = sessionStorage.getItem("Information");
+                        var InformationObj = JSON.parse(sessionInformation);
+                        var account = $('.js-account').val();
+                        var password = $('.js-password').val();
+                        var login ='';
+                        console.log(InformationObj);
+                        if(InformationObj == null){
+                            
+                        }else{
+                            login = $.grep(InformationObj,function(item,index){
+                            if(item.account == account && item.password == password){
+                                return item;
+                            }
+                            
+                        })
                         }
+                        console.log(login)
+                        if(login == ''){
+                            alert('帳號密碼輸入錯誤');
+                        }else{
+                            window.location.href='Default2.html';
+                            // $.map(login,function(item,index){
+                            //     if(item.account == account && item.password == password){
+                            //         
+                            //     }
+                            // })
+                        }
+
+                        // if(sessionStorage.getItem("account") == null || sessionStorage.getItem("password") == null  ){
+                        //    
+                        // //   else{
+                        //     
+                        //     }  
+                        // }
                     })
 
                     //帳號

@@ -106,17 +106,51 @@
             <script src="assets/js/main.js"></script>
             <script>
                 $(function(){
-
+                    var Information= [];
                     $('.js-signup').on('click',function(){
                         var account = $('.js-account').val();
                         var password = $('.js-password').val();
                         var name = $('.js-user').val();
                         var email = $('.js-email').val();
-                        console.log(account,password,name,email);
-                        sessionStorage.setItem("account", account);
-                        sessionStorage.setItem("password", password);
-                        sessionStorage.setItem("name", name);
-                        sessionStorage.setItem("email", email);
+                        var InformationObj = {
+                            'account':account,
+                            'password':password,
+                            'name':name,
+                            'email':email
+                        };
+                        var sessionInformation = sessionStorage.getItem("Information");
+                        Information = JSON.parse(sessionInformation);
+                        if(Information == '' || Information == null){
+                            if(Information == null){
+                                Information = [];
+                                Information.push(InformationObj);
+                                sessionStorage.setItem("Information",  JSON.stringify(Information));
+                                 window.location.href='login.html';
+                            }else{
+                                Information.push(InformationObj);
+                                sessionStorage.setItem("Information",  JSON.stringify(Information));
+                                 window.location.href='login.html';
+                            }
+                            
+                           
+                        }else{
+                            $.map(Information,function(item,index){
+                            var signupAccount = item.account;
+                            console.log(signupAccount);
+                            if(account != signupAccount ){
+                                Information.push(InformationObj);
+                                sessionStorage.setItem("Information", JSON.stringify(Information));
+                                window.location.href='login.html'; 
+                            }else{
+                                alert('帳號有人使用')
+                            }
+                        })
+                        }
+
+                        // sessionStorage.setItem("account", account);
+                        // sessionStorage.setItem("password", password);
+                        // sessionStorage.setItem("name", name);
+                        // sessionStorage.setItem("email", email);
                     })
 
                     //帳號
